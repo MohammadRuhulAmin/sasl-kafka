@@ -9,7 +9,7 @@ config = {
     'bootstrap_servers': ['host.docker.internal:9092'],
     'security_protocol': 'SASL_PLAINTEXT',
     'sasl_mechanism': 'PLAIN',
-    'sasl_plain_username': 'producer1l',
+    'sasl_plain_username': 'producer1',
     'sasl_plain_password': 'prod1-secret',
     'value_serializer': lambda v: json.dumps(v).encode('utf-8'),
     'api_version': (0, 10, 1)
@@ -35,8 +35,8 @@ def main():
     try:
         # Create producer instance
         producer = KafkaProducer(**config)
+        producer.partitions_for('bbp-etl') 
         print("📡 Connected to Kafka successfully!")
-        
         # Sample messages
         messages = [
             {"id": 1, "status": "processing", "data": "Sample data 1"},
@@ -47,7 +47,7 @@ def main():
         # Send each message
         for message in messages:
             send_message(producer, 'bbp-etl', message)
-            time.sleep(1)  # Wait 1 second between messages
+            time.sleep(1)  
             
     except Exception as e:
         print(f"❌ Error: {str(e)}")
