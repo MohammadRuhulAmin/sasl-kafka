@@ -12,5 +12,18 @@ kafka-acls --bootstrap-server kafka:29092 --command-config /etc/kafka/admin.prop
     --operation Write --operation Describe \
     --topic bbp-etl
 
+# Add ACLs for IPA-BIDA -> bbp-etl
+kafka-acls --bootstrap-server kafka:29092 --command-config /etc/kafka/admin.properties \
+    --add --allow-principal User:IPA-BIDA \
+    --operation Write --operation Describe \
+    --topic bbp-etl
+
+# Add ACLs for IPA-HITECH -> bbp-etl-hitech
+kafka-acls --bootstrap-server kafka:29092 --command-config /etc/kafka/admin.properties \
+    --add --allow-principal User:IPA-HITECH \
+    --operation Write --operation Describe \
+    --topic bbp-etl-hitech
+
+
 # List all ACLs
 kafka-acls --bootstrap-server kafka:29092 --command-config /etc/kafka/admin.properties --list
