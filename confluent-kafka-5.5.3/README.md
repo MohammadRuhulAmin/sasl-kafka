@@ -33,13 +33,13 @@ docker exec -it 46abba93a4a3 kafka-acls \
   --topic bbp-etl
 
 
-  docker exec -it 3d88b5675385 kafka-acls \
+  docker exec -it bc355650a057  kafka-acls \
   --bootstrap-server kafka:9092 \
   --command-config /etc/kafka/admin.properties \
   --add \
   --allow-principal User:dashboard \
   --operation Write \
-  --topic bbp-etl
+  --topic my-logs
 
 
 ```

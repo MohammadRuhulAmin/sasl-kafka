@@ -1,0 +1,8 @@
+version: '1.0.0'
+
+Services:
+  kafka:
+    image: apache/kafka:4.1.0
+    container_name: kafka
+    ports:
+      - "9092:9092"
