@@ -6,11 +6,11 @@ import time
 
 # Configuration for authenticated producer
 config = {
-    'bootstrap_servers': ['kafka:9092'],
+    'bootstrap_servers': ['172.16.48.88:9092'],
     'security_protocol': 'SASL_PLAINTEXT',
     'sasl_mechanism': 'PLAIN',
-    'sasl_plain_username': 'producer1',
-    'sasl_plain_password': 'prod1-secret',
+    'sasl_plain_username': 'dashboard',
+    'sasl_plain_password': '$$xdsx12!!@@33Xsd',
     'value_serializer': lambda v: json.dumps(v).encode('utf-8'),
     'api_version': (0, 10, 1)
 }
