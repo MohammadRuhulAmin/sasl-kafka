@@ -2,14 +2,14 @@ from kafka import KafkaConsumer
 import json
 
 # Kafka SASL/PLAIN authentication configuration
-bootstrap_servers = ['localhost:9092']
+bootstrap_servers = ['172.16.48.88:9092']
 topic = 'bbp-etl'
 
 # These credentials must match your JAAS config in the broker
 sasl_mechanism = 'PLAIN'
 security_protocol = 'SASL_PLAINTEXT'
-username = 'HITECH-CONSUMER'
-password = 'HITECH-CONSUMER-secret'
+username = 'dashboard'
+password = '$$xdsx12!!@@33Xsd'
 
 # Create the consumer
 consumer = KafkaConsumer(
