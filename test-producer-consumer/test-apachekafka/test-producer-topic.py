@@ -8,7 +8,7 @@ producer = KafkaProducer(
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
 
-topic = "quickstart-events"
+topic = "quickstart-eventsx"
 
 print("Producing messages to Kafka topic:", topic)
 

@@ -19,8 +19,6 @@ def send_message(producer, topic, message):
     try:
         # Add timestamp to message
         message['timestamp'] = datetime.now().isoformat()
-        
-        # Send the message
         future = producer.send(topic, message)
         result = future.get(timeout=60)
         print(f"✅ Message sent successfully to {topic}")
@@ -39,9 +37,18 @@ def main():
         print("📡 Connected to Kafka successfully!")
         # Sample messages
         messages = [
-            {"id": 1, "status": "processing", "data": "Sample data 1"},
-            {"id": 2, "status": "completed", "data": "Sample data 2"},
-            {"id": 3, "status": "processing", "data": "Sample data 3"}
+            {
+            "jobId": "9e50834b-6374-46fa-9581-cc6394c2fa6f",
+            "scheduleId": "e7350603-24d0-4c50-b9ef-23bb026f3edb",
+            "scheduleName": "Test Every 6 Minute",
+            "reportType": "null",
+            "status": "null",
+            "timestamp": "null",
+            "createdBy": "null",
+            "ipaRole": "all",
+            "recipients": "{}",
+            "params":"{}"
+}
         ]
         
         # Send each message
