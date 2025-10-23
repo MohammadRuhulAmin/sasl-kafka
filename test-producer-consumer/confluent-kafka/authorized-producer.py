@@ -6,7 +6,7 @@ import time
 
 # Configuration for authenticated producer
 config = {
-    'bootstrap_servers': ['172.16.48.88:9092'],
+    'bootstrap_servers': ['10.10.200.72:9092'],#['172.16.48.88:9092'],
     'security_protocol': 'SASL_PLAINTEXT',
     'sasl_mechanism': 'PLAIN',
     'sasl_plain_username': 'dashboard',
@@ -20,7 +20,7 @@ def send_message(producer, topic, message):
         # Add timestamp to message
         message['timestamp'] = datetime.now().isoformat()
         future = producer.send(topic, message)
-        result = future.get(timeout=60)
+        result = future.get() #timeout=60
         print(f"✅ Message sent successfully to {topic}")
         print(f"Partition: {result.partition}, Offset: {result.offset}")
         print(f"Message: {message}")

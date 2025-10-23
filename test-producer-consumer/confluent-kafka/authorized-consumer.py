@@ -2,7 +2,7 @@ from kafka import KafkaConsumer
 import json
 
 # Kafka SASL/PLAIN authentication configuration
-bootstrap_servers = ['172.16.48.88:9092']
+bootstrap_servers = ['10.10.200.72:9092'] #['172.16.48.88:9092']
 topic = 'bbp-etl'
 
 # These credentials must match your JAAS config in the broker
