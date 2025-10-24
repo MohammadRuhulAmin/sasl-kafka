@@ -3,8 +3,8 @@ import json
 
 # Create Kafka consumer
 consumer = KafkaConsumer(
-    'quickstart-events',
-    bootstrap_servers=['localhost:9092'],
+    'quickstart-eventsx',
+    bootstrap_servers=['localhost:9094'],
     auto_offset_reset='earliest',
     enable_auto_commit=True,
     group_id='my-consumer-group-w',

@@ -1,3 +1,6 @@
 /zkafka_data
 
-/data
+/apache-kafka-4.1.0/data
+
+
+/venv
