@@ -8,7 +8,7 @@ producer = KafkaProducer(
     value_serializer=lambda v: json.dumps(v).encode('utf-8'),
     security_protocol='SASL_PLAINTEXT',  # or 'SASL_SSL' if using SSL
     sasl_mechanism='PLAIN',
-    sasl_plain_username='mumtahinax',
+    sasl_plain_username='mumtahina',
     sasl_plain_password='mumtahina-1221'
 )
 
