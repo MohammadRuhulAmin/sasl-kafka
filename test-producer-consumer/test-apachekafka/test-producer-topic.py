@@ -12,7 +12,7 @@ producer = KafkaProducer(
     sasl_plain_password='mumtahina-1221'
 )
 
-topic = "quickstart-eventsx"
+topic = "bbp-etl-x"
 
 print("Producing messages to Kafka topic:", topic)
 

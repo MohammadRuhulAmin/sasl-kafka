@@ -39,14 +39,21 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
       
       # ---------------- Log Retention Policy ----------------
       KAFKA_LOG_RETENTION_HOURS: 168
       KAFKA_LOG_SEGMENT_BYTES: 1073741824
       KAFKA_LOG_RETENTION_CHECK_INTERVAL_MS: 300000
 
+      # --------------------Access Control List --------------
+      KAFKA_AUTHORIZER_CLASS_NAME: "org.apache.kafka.metadata.authorizer.StandardAuthorizer"
+      KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
+      KAFKA_SUPER_USERS: User:ruhul
+
       # Cluster ID for KRaft mode
       KAFKA_CLUSTER_ID: '5L6g3nShT-eMCtK--X86sw'
     volumes:
       - ./data/kafka:/var/lib/kafka/data
       - ./config/kafka_server_jaas.conf:/etc/kafka/kafka_server_jaas.conf
+      - ./config/client.properties:/etc/kafka/client.properties

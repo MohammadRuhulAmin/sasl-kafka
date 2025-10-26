@@ -3,7 +3,7 @@ import json
 
 # Create Kafka consumer with SASL/PLAIN authentication
 consumer = KafkaConsumer(
-    'quickstart-eventsx',
+    'bbp-etl',
     bootstrap_servers=['localhost:9094'],  # SASL listener port
     auto_offset_reset='earliest',
     enable_auto_commit=True,
