@@ -2,8 +2,11 @@ version: '3.8'
 
 services:
   kafka:
-    image: apache/kafka:4.1.0
+    build:
+      context: .
+      dockerfile: Dockerfile.kafka
     container_name: kafka
+    user: "0"
     ports:
       - "9092:9092"
       - "9094:9094"
@@ -57,3 +60,9 @@ services:
       - ./data/kafka:/var/lib/kafka/data
       - ./config/kafka_server_jaas.conf:/etc/kafka/kafka_server_jaas.conf
       - ./config/client.properties:/etc/kafka/client.properties
+      - ./kafka_acls/acl-rules.sh:/opt/kafka/acl-rules.sh
+
+
+
+  
+    

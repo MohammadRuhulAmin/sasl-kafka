@@ -21,6 +21,6 @@ bin/kafka-acls.sh \
     --add \
     --allow-principal User:mumtahina \
     --operation Write \
-    --topic bbp-etl-x
+    --topic bbp-etl
 
 ```
