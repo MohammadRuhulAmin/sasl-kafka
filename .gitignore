@@ -1,3 +1,4 @@
 /zkafka_data
 /apache-kafka-4.1.0/data
 /venv
+confluent-kafka-5.5.3/zkafka_data/

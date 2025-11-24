@@ -71,4 +71,5 @@ docker exec -it 3d88b5675385 kafka-topics \
 ```sh
 docker exec -it sasl-kafka-zookeeper-1 zookeeper-shell localhost:2181
 get /cluster/id
+rename bbp-kafka/confluent-kafka-5.5.3/zkafka_data/kafka/meta.properties
 ```

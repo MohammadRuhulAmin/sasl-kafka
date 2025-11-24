@@ -46,7 +46,7 @@ services:
       - ./zkafka_data/kafka:/var/lib/kafka/data
       - ./config/kafka_server_jaas.conf:/etc/kafka/kafka_server_jaas.conf
       - ./config/admin.properties:/etc/kafka/admin.properties
-      # - ./config/setup-acls.sh:/etc/kafka/setup-acls.sh
+      - ./kafka_acls/acl-rules.sh:/opt/kafka/acl-rules.sh
     healthcheck:
       test: kafka-topics --bootstrap-server kafka:29092 --list || exit 1
       interval: 10s
